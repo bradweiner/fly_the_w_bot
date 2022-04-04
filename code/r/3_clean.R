@@ -14,7 +14,7 @@ source("code/r/0_creds.R")
 source("code/r/1_load.R")
 
 #source from github
-source_url("https://raw.githubusercontent.com/bradweiner/fly_the_w_bot/master/code/r/3_clean.R")
+#source_url("https://raw.githubusercontent.com/bradweiner/fly_the_w_bot/master/code/r/3_clean.R")
 
 shut_down_signal <- FALSE
 
