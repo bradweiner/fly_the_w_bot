@@ -3,10 +3,18 @@
 #clear memory
 rm(list=ls())
 
-setwd("~/Dropbox/Side Projects/fly_the_w_bot")
+#set directory for AWS instance
+setwd("~/fly_the_w_bot/")
 
+#set directory for local version
+# setwd("~/Dropbox/Side Projects/fly_the_w_bot")
+
+#source locally from aws or relative path
 source("code/r/0_creds.R")
 source("code/r/1_load.R")
+
+#source from github
+#source_url("https://raw.githubusercontent.com/bradweiner/fly_the_w_bot/master/code/r/3_clean.R")
 
 shut_down_signal <- FALSE
 
@@ -31,9 +39,9 @@ if(nrow(cubs) == 0){
 # Post Tweet if Cubs Won
 
 if (cubs$cubs_w_or_l == "Cubs Won" &
-   cubs$game_status %in% complete_game_statuses &
-   cubs$id %ni% already_tweeted$id &
-   nchar(cubs$winpitch) > 0){
+    cubs$game_status %in% complete_game_statuses &
+    cubs$id %ni% already_tweeted$id &
+    nchar(cubs$winpitch) > 0){
         
         create_w_tweet()
         
@@ -46,7 +54,7 @@ if (cubs$cubs_w_or_l == "Cubs Won" &
         saveRDS(already_tweeted,"data/transformed/already_tweeted_2022.rds")
         
         shut_down_signal <- TRUE
-        }
+}
 
 
 # Shut Down Server if Cubs Lost
@@ -65,7 +73,7 @@ add_to_croncheck()
 
 # Remove Rtweet tokens
 
-# system(command = "rm .rtweet_token*")
+system(command = "rm /home/rstudio/.rtweet_token*")
 
 # Shut down server if shut down signal is TRUE
 
