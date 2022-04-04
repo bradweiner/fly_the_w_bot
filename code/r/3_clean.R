@@ -6,7 +6,7 @@ rm(list=ls())
 #set directory for AWS instance
 setwd("~/fly_the_w_bot/")
 
-#set directory for local version
+#set directory for local testing
 # setwd("~/Dropbox/Side Projects/fly_the_w_bot")
 
 #source locally from aws or relative path
