@@ -71,8 +71,7 @@ if(cubs$cubs_w_or_l == "Cubs Lost" &
 
 add_to_croncheck()
 
-# Remove Rtweet tokens
-
+# Remove Rtweet tokens AWS instance
 system(command = "rm /home/rstudio/.rtweet_token*")
 
 # Shut down server if shut down signal is TRUE
