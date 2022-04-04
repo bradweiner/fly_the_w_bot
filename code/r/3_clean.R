@@ -14,7 +14,7 @@ source("code/r/0_creds.R")
 source("code/r/1_load.R")
 
 #source from github
-#source_url("https://raw.githubusercontent.com/bradweiner/fly_the_w_bot/master/code/r/3_clean.R")
+source_url("https://raw.githubusercontent.com/bradweiner/fly_the_w_bot/master/code/r/3_clean.R")
 
 shut_down_signal <- FALSE
 
@@ -73,6 +73,9 @@ add_to_croncheck()
 
 # Remove Rtweet tokens AWS instance
 system(command = "rm /home/rstudio/.rtweet_token*")
+
+# Remove Rtweet tokens for local instance
+# system(command = "rm ~/.rtweet_token*")
 
 # Shut down server if shut down signal is TRUE
 
